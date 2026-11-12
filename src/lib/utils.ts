@@ -1,4 +1,3 @@
-// // export { cn } from "cn"
 // // src/lib/utils.ts
 // import { clsx, type ClassValue } from "clsx";
 // import { twMerge } from "tailwind-merge";
@@ -9,10 +8,8 @@
 
 // export interface ScholarshipBreakdown {
 //   originalFee: number;
-//   studentPayable: number;
-//   scholarshipCovered: number;
-//   effectiveDiscountPercent: number;
-//   isCapped: boolean;
+//   scholarshipAmount: number;
+//   studentPays: number;
 // }
 
 // /**
@@ -20,24 +17,19 @@
 //  * Student pays 10% of the programme fee, capped at ₦10,000.
 //  */
 // export function calculateStudentContribution(
-//   originalFee: number,
+//   fee: number,
 //   studentPercent = 10,
 //   capNaira = 10000
 // ): ScholarshipBreakdown {
-//   const safeFee = Math.max(0, Number(originalFee) || 0);
-//   const rawContribution = (safeFee * studentPercent) / 100;
-//   const isCapped = rawContribution > capNaira;
-//   const studentPayable = Math.min(rawContribution, capNaira);
-//   const scholarshipCovered = Math.max(0, safeFee - studentPayable);
-//   const effectiveDiscountPercent =
-//     safeFee > 0 ? Math.round((scholarshipCovered / safeFee) * 100) : 0;
+//   const originalFee = Math.max(0, Number(fee) || 0);
+//   const rawContribution = (originalFee * studentPercent) / 100;
+//   const studentPays = Math.min(rawContribution, capNaira);
+//   const scholarshipAmount = Math.max(0, originalFee - studentPays);
 
 //   return {
-//     originalFee: safeFee,
-//     studentPayable,
-//     scholarshipCovered,
-//     effectiveDiscountPercent,
-//     isCapped,
+//     originalFee,
+//     scholarshipAmount,
+//     studentPays,
 //   };
 // }
 
@@ -52,6 +44,9 @@
 //     maximumFractionDigits: 0,
 //   }).format(safeAmount);
 // }
+
+
+
 
 
 // src/lib/utils.ts
@@ -69,17 +64,15 @@ export interface ScholarshipBreakdown {
 }
 
 /**
- * Calculates student contribution under DevsCircle's 90% scholarship rule:
- * Student pays 10% of the programme fee, capped at ₦10,000.
+ * Calculates student contribution under DevsCircle's scholarship rule:
+ * Student pays a flat contribution of ₦10,000 (or the original fee if lower).
  */
 export function calculateStudentContribution(
   fee: number,
-  studentPercent = 10,
-  capNaira = 10000
+  flatContribution = 10000
 ): ScholarshipBreakdown {
   const originalFee = Math.max(0, Number(fee) || 0);
-  const rawContribution = (originalFee * studentPercent) / 100;
-  const studentPays = Math.min(rawContribution, capNaira);
+  const studentPays = Math.min(originalFee, flatContribution);
   const scholarshipAmount = Math.max(0, originalFee - studentPays);
 
   return {

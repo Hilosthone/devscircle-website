@@ -1,51 +1,9 @@
-// import { Navbar } from "@/components/common/navbar";
-// import { Footer } from "@/components/common/footer";
-// import { HeroSection } from "@/features/landing/components/HeroSection";
-// import { WelcomeSection } from "@/features/landing/components/WelcomeSection";
-// import { WhyDevsCircle } from "@/features/landing/components/WhyDevsCircle";
-// import { ScholarshipSection } from "@/features/landing/components/ScholarshipSection";
-// import { ProgrammesSection } from "@/features/landing/components/ProgrammesSection";
-// import { ComingSoonSection } from "@/features/landing/components/ComingSoonSection";
-// import { AssessmentSection } from "@/features/landing/components/AssessmentSection";
-// import { FAQSection } from "@/features/landing/components/FAQSection";
-
-// export default function HomePage() {
-//   return (
-//     <div className="min-h-screen flex flex-col bg-background text-foreground">
-//       <Navbar />
-
-//       <main className="flex-1">
-//         <HeroSection />
-//         <WelcomeSection />
-//         <WhyDevsCircle />
-//         <ScholarshipSection />
-//         <ProgrammesSection />
-//         <ComingSoonSection />
-//         <AssessmentSection />
-//         <FAQSection />
-//       </main>
-
-//       <Footer />
-//     </div>
-//   );
-// }
-
-
-
-
-
+// src/app/page.tsx
 import type { Metadata } from "next";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
-import { HeroSection } from "@/features/landing/components/HeroSection";
-import { WelcomeSection } from "@/features/landing/components/WelcomeSection";
-import { WhyDevsCircle } from "@/features/landing/components/WhyDevsCircle";
-import { ScholarshipSection } from "@/features/landing/components/ScholarshipSection";
-import { ProgrammesSection } from "@/features/landing/components/ProgrammesSection";
-import { ComingSoonSection } from "@/features/landing/components/ComingSoonSection";
-import { AssessmentSection } from "@/features/landing/components/AssessmentSection";
-import { FAQSection } from "@/features/landing/components/FAQSection";
+import { HomeContent } from "@/features/landing/components/HomeContent";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://devscircleacademy.com";
@@ -87,20 +45,9 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col bg-background text-foreground relative selection:bg-orange-500/30 selection:text-orange-200">
       <Navbar />
-
-      <main className="flex-1">
-        <HeroSection />
-        <WelcomeSection />
-        <WhyDevsCircle />
-        <ScholarshipSection />
-        <ProgrammesSection />
-        <ComingSoonSection />
-        <AssessmentSection />
-        <FAQSection />
-      </main>
-
+      <HomeContent />
       <Footer />
     </div>
   );
