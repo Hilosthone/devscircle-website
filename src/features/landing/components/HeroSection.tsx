@@ -9,7 +9,7 @@ import { Clock, MapPin, Award, ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 text-white py-20 md:py-28 border-b border-slate-900">
+    <section className="relative overflow-hidden bg-slate-950 text-white py-28 border-b border-slate-900">
       {/* Background Glow — Orange & Red Ambient Light */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-r from-orange-600/25 via-red-600/20 to-amber-500/20 blur-[130px] pointer-events-none" />
 
