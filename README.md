@@ -1,9 +1,12 @@
-```
-# DevsCircle Academy 🚀
+---
+DevsCircle Academy 🚀
+---
 
+---
 DevsCircle Academy is a modern, production-grade, AI-powered and role-based EdTech platform engineered for full-stack software engineering bootcamps, technical instruction, and cohort-based learning. 
 
 Built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and a unified monolithic backend API architecture, it features three distinct, secure portals for **Administrators**, **Tutors**, and **Students**.
+---
 
 ---
 
@@ -39,6 +42,7 @@ Built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and a uni
 
 ---
 
+---
 ## 🛠️ Tech Stack
 
 * **Frontend:** Next.js (App Router), React, TypeScript, Tailwind CSS, Lucide Icons.
@@ -47,6 +51,7 @@ Built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**, and a uni
 
 ---
 
+---
 ## 📁 Project Directory Structure
 
 ```text
@@ -69,8 +74,9 @@ src/
     └── types/           # TypeScript API and role definitions
 
 ```
-
 ---
+
+
 
 ## 🚀 Getting Started Locally
 
