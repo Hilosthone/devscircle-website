@@ -1,6 +1,7 @@
 // src/app/(public)/privacy-policy/page.tsx
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/common/navbar";
 import { Footer } from "@/components/common/footer";
@@ -8,6 +9,18 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { ShieldCheck, Lock, Eye, Database, Mail } from "lucide-react";
 
 export default function PrivacyPolicyPage() {
+  const [lastUpdated, setLastUpdated] = useState<string>("November 2026");
+
+  useEffect(() => {
+    setLastUpdated(
+      new Date().toLocaleDateString("en-NG", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      })
+    );
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-950 text-slate-300">
       <Navbar />
@@ -29,7 +42,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
             <p className="text-xs sm:text-sm text-slate-400">
-              Last updated: {new Date().toLocaleDateString("en-NG", { month: "long", day: "numeric", year: "numeric" })}
+              Last updated: {lastUpdated}
             </p>
           </motion.div>
 
