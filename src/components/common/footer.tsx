@@ -22,19 +22,15 @@ interface PhysicsBox {
 const TECH_TERMS = [
   // Full-Stack & Backend
   "React.js", "TypeScript", "Next.js", "Python", "Node.js", 
-  "Full-Stack", "AI Engineer", "MongoDB", "Tailwind CSS", "PostgreSQL",
   "Scholarship", "DevsCircle", "Zustand", "FastAPI", "Docker",
   "JavaScript", "Git & GitHub", "REST API", "Responsive", "Capstone",
-  "Express.js", "Redux", "Database", "Authentication", "JWT", "Prisma",
   
   // UI/UX & Graphic Design
   "UI/UX Design", "Figma", "Wireframing", "Typography", "Color Theory",
-  "Brand Identity", "Adobe Photoshop", "Adobe Illustrator", "Prototyping",
   "User Research", "Logo Design", "Layout Grid", "Visual Hierarchy", "Vector Art",
 
   // Video Editing & Motion Graphics
   "Video Editing", "Adobe Premiere Pro", "CapCut Pro", "Color Grading",
-  "Visual Storytelling", "Audio Mixing", "Keyframing", "Reels & Shorts",
   "Motion Graphics", "Timeline Cutting", "B-Roll", "Transitions", "Sound Design"
 ];
 
